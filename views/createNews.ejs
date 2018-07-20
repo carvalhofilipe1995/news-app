@@ -1,0 +1,29 @@
+<% include common/header %>
+
+    <% if (errors) {%>
+        <section class="errors">
+            <ul>
+                <% for (var i = 0; i < errors.length; i++){ %>
+                    <li><%= errors[i].msg %></li>
+                <% } %> 
+            </ul>
+        </section>
+    <% } %>
+
+    <h2>Add News</h2>
+    <hr>
+    <form action="/create" method="post" encType="multipart/form-data">
+        <p>Title</p>
+        <input type="text" name="title">
+        <p> Description </p>
+        <textarea name="description">Enter text here...</textarea>
+        <p> Creation date </p>
+        <input type="date" name="creationDate">
+        <p>Image</p>
+        <input type="file" name="uploadedImage">
+        <br>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <% include common/footer %>

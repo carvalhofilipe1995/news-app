@@ -1,0 +1,31 @@
+<% include common/header %>
+
+  <ul>
+    <li>
+      <a href="/createNews">Add news</a>
+    </li>
+  </ul>
+  <hr>
+  <h2>Current News</h2>
+  <hr>
+
+<% for(var i = 0; i < news.length; i++) { %>
+    <ul>
+      <li><%= news[i].title %></li>
+      <li><%= news[i].description %></li>
+      <li><%= news[i].creationDate %></li><br>
+      <div style="display: inline">
+      <form action="/delete/<%= news[i]._id %>" method="post">
+        <button class="button-delete" type="submit">Delete</button>
+      </form>
+      <br>
+      <form action="/update/<%= news[i]._id %>" method="update" encType="multipart/form-data">
+        <button class="button-update" type="submit">Update</button>
+      </form>
+      </div>
+      <hr>
+    </ul>
+<% } %>
+
+
+<% include common/footer %>

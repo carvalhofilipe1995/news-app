@@ -1,0 +1,13 @@
+<% include common/header %>
+
+    <h2>Update News</h2>
+    <hr>
+    <form action="/update/<%= id %>" method="post" encType="multipart/form-data">
+        <p>Title</p>
+        <input type="text" name="title">
+        <p> Description </p>
+        <textarea name="description"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <% include common/footer %>
